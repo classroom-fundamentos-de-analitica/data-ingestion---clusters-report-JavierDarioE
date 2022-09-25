@@ -25,7 +25,7 @@ def ingest_data():
     body = [re.split(r"\s{2,}", row, 3) for row in body]
     for row in body:
         row[2] = row[2].replace(" %", "").replace(",", ".")
-        row[3] = re.sub(r"\s+", " ", row[3].replace(".", ""))
+        row[3] = re.sub(r"\s+", " ", row[3].replace(".", "").strip())
     data_types_dict = {'cluster': int,
                        'cantidad_de_palabras_clave': int,
                        'porcentaje_de_palabras_clave': float,
